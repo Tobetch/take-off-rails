@@ -10,4 +10,10 @@ class UsersController < ApplicationController
     # @user_chinju_first = User.findby(name: "珍獣")
     # @user_chinju_first_with_error = User.findby!(name: "珍獣")
   end
+
+  # return json by render
+  def index_api
+    @users = User.all
+    render json: @users
+  end
 end
